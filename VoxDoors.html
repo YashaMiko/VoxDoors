@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .image-swap-container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-swap-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .door-closed {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .door-open {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .image-swap-container:hover .door-closed {
+            opacity: 0;
+        }
+
+        .image-swap-container:hover .door-open {
+            opacity: 1;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+        <div class="image-swap-container">
+            <img class="door-closed" img src="images/Closed Door.png" alt="Closed Door">
+            <img class="door-open" img src="Images/Open Door.png" alt="Open Door">
+        </div>
+</body>
+</html>
