@@ -18,7 +18,12 @@
 
         .container {
             text-align: center;
-        } 
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
 
         .image-swap-container {
             position: relative;
@@ -39,6 +44,7 @@
             height: 100%;
             object-fit: cover;
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
         .door-closed {
@@ -51,19 +57,21 @@
             z-index: 1;
         }
 
-        .image-swap-container:hover .door-closed {
+        a:hover .door-closed {
             opacity: 0;
         }
 
-        .image-swap-container:hover .door-open {
+        a:hover .door-open {
             opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="image-swap-container" onclick="window.open('https://www.voxmagazine.com/features/online/columbia-paramotoring-sport-gains-popularity/article_b98e68fc-53e6-11ee-8896-87a74482a143.html', '_blank')">
-        <img class="door-closed" src="Images/Closed Door.png" alt="Closed Door">
-        <img class="door-open" src="Images/Open Door.png" alt="Open Door">
-    </div>
+    <a href="https://www.voxmagazine.com/features/online/columbia-paramotoring-sport-gains-popularity/article_b98e68fc-53e6-11ee-8896-87a74482a143.html" target="_blank">
+        <div class="image-swap-container">
+            <img class="door-closed" src="Images/Closed Door.png" alt="Closed Door">
+            <img class="door-open" src="Images/Open Door.png" alt="Open Door">
+        </div>
+    </a>
 </body>
 </html>
